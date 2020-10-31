@@ -1,0 +1,14 @@
+@import './manrope.scss';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: manrope, sans-serif;
+}
+
+#page {
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: auto;
+}
