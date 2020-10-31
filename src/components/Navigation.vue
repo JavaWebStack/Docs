@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="nav">
+        <div id="nav" :class="{docs: $route.meta.docs}">
             <router-link id="logo" to="/">
                 <img src="../assets/img/icon.svg">
                 <span>
@@ -11,6 +11,9 @@
                 <router-link to="/docs">DOCS</router-link>
                 <a href="https://github.com/JavaWebStack">GITHUB</a>
             </div>
+        </div>
+        <div id="docs-sidenav" v-if="$route.meta.docs">
+            asd
         </div>
 
     </div>
@@ -25,6 +28,7 @@ export default {
 #nav {
     max-width: 1200px;
     padding: 0px 20px;
+    transition: 0.3s;
     margin: auto;
     margin-top: 30px;
     #logo,
@@ -56,5 +60,40 @@ export default {
             font-weight: 600;
         }
     }
+
+    &.docs {
+        position: fixed;
+        margin-top: 0px;
+        max-width: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        padding: 10px 15px;
+        background: #EEEEEEAA;
+        backdrop-filter: blur(8px);
+
+        #logo,
+        #logo:visited {
+            img {
+                width: 51px;
+            }
+        }
+
+        .links {
+            a, a:link {
+                line-height: 51px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+#docs-sidenav {
+    background: #EEEEEEAA;
+    backdrop-filter: blur(8px);
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 71.1px;
 }
 </style>

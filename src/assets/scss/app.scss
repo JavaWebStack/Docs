@@ -1,4 +1,4 @@
-@import './manrope.scss';
+@import './manrope.scss', "./highlight.scss";
 
 * {
     padding: 0px;
@@ -11,4 +11,46 @@
     max-width: 1200px;
     padding: 0px 20px;
     margin: auto;
+
+    &.docs {
+        margin-left: 300px;
+        max-width: 100%;
+    }
+}
+
+#markdown-contents {
+    font-size: 21px;
+
+    h1, h2, h3 {
+        border-bottom: 1.3px #CCC solid;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        color: #323232;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-weight: 500;
+        color: #434343;
+    }
+    li {
+        margin-left: 24px;
+    }
+
+    a:link,
+    a:visited {
+        color: #60A8FD;
+        transition: 0.3s;
+        font-weight: 500;
+        text-decoration: none;
+        &:hover {
+            color: #4a8edb;
+        }
+    }
 }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Home'
+import Doc from '../views/Doc'
 
 Vue.use(VueRouter)
 
@@ -8,22 +9,49 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    meta: {
+      title: "Homepage"
+    },
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+
+
+const structure = require("../assets/docs/structure.js").default
+
+
+function walkStructure(basePath, structure) {
+  if(structure.content){
+    routes.push({
+      path: basePath + '/' + structure.name,
+      meta: {
+        docs: true,
+        title: structure.title,
+        content: structure.content
+      },
+      component: Doc
+    })
+  }
+  if(structure.children){
+    structure.children.forEach(c => walkStructure(basePath + '/' + structure.name, c))
+  }
+}
+
+walkStructure("", structure)
+
+console.log(routes)
+
+
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next)=>{
+  document.title = (to.meta.title || "404") + " | JavaWebStack"
+  next()
 })
 
 export default router

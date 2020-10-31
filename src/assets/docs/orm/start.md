@@ -1,4 +1,3 @@
-# Getting started
 ### example
 ```java
 public class Test {
