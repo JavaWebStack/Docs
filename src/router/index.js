@@ -21,7 +21,7 @@ const structure = require("../assets/docs/structure.js").default
 
 
 function walkStructure(basePath, structure) {
-  if(structure.content){
+  if(structure.content !== undefined){
     routes.push({
       path: basePath + '/' + structure.name,
       meta: {
@@ -33,14 +33,13 @@ function walkStructure(basePath, structure) {
     })
   }
   if(structure.children){
-    structure.children.forEach(c => walkStructure(basePath + '/' + structure.name, c))
+    structure.children.forEach(c => {
+      walkStructure(basePath + '/' + structure.name, c)
+    })
   }
 }
 
 walkStructure("", structure)
-
-console.log(routes)
-
 
 
 const router = new VueRouter({

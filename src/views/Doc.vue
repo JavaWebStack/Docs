@@ -1,7 +1,9 @@
 <template>
     <div id="doc">
-        <h1 id="doc-title">{{$route.meta.title}}</h1>
-        <vue-markdown ref="content" id="markdown-contents" @rendered="onRender" :source="$route.meta.content" />
+        <div style="width: 100%; padding-left: 15%; padding-right: 15%; padding-top: 50px; padding-bottom: 50px;">
+            <h1 id="doc-title">{{$route.meta.title}}</h1>
+            <vue-markdown ref="content" id="markdown-contents" @rendered="onRender" :source="$route.meta.content" />
+        </div>
     </div>
 </template>
 <script>
@@ -12,11 +14,6 @@ import 'prismjs/components/prism-java.min';
 export default {
     components: {
         VueMarkdown
-    },
-    data: function(){return {
-    }},
-    mounted(){
-        console.log(this.$route.meta.content)
     },
     methods: {
         onRender(){
