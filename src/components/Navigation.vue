@@ -13,7 +13,12 @@
             </div>
         </div>
         <div id="docs-sidenav" v-if="$route.meta.docs">
-            asd
+            <router-link class="sidenav-entry" to="/docs">
+                Hello there
+            </router-link>
+            <router-link class="sidenav-entry selected" to="/docs">
+                Hello there 2
+            </router-link>
         </div>
 
     </div>
@@ -95,5 +100,24 @@ export default {
     width: 300px;
     height: 100%;
     top: 71.1px;
+
+    .sidenav-entry,
+    .sidenav-entry:visited {
+        text-decoration: none;
+        color: #434343;
+        display: block;
+        padding: 7px 10px;
+        font-weight: 600;
+        transition: 0.3s;
+        font-size: 18px;
+        &.selected {
+            color: #60A8FD;
+            background: #60A8FD22;
+        }
+        &:hover {
+            color: #60A8FD;
+            background: #60A8FD11;
+        }
+    }
 }
 </style>

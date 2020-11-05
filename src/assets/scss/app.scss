@@ -7,6 +7,10 @@
     font-family: manrope, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #page {
     max-width: 1200px;
     padding: 0px 20px;
@@ -20,6 +24,16 @@
 
 #markdown-contents {
     font-size: 21px;
+
+    code {
+        background: #00000011;
+        border-radius: 5px;
+        padding: 0px 4px;
+    }
+
+    code pre {
+        font-size: 16px;
+    }
 
     h1, h2, h3 {
         border-bottom: 1.3px #CCC solid;
