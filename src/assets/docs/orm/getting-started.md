@@ -67,16 +67,7 @@ User customer = ...;
 customer.delete();
 ```
 #### Special Case: Soft Deletes
-The ORM supports a technique called soft deletes. This will instead of actually the deleting the entity from the database, set a special timestamp to mark it as "deleted". It allows to restore the entity at any later point in time. To enable this feature we need to add a special "deletedAt" column and the `@SoftDelete` annotation to our model.
-```java
-@SoftDelete
-class User extends Model {
-    /* <other fields> */
-    @Column
-    Timestamp deletedAt;
-}
-```
-By calling the `delete()` method now it will set the `deletedAt` timestamp to the current time. This will exclude it from queries which don't include the `withDeleted()` option. To later restore an entity you can use the `restore()` method or to finally delete it you can call `finalDelete()`. You can read more about soft deletes [here](/docs/orm/soft-deletes).
+The ORM supports a technique called soft deletes. This will instead of actually the deleting the entity from the database, set a special timestamp to mark it as "deleted". It allows to restore the entity at any later point in time. You can read more about soft deletes [here](/docs/orm/soft-deletes).
 
 ## Conclusion
 You are now able to save, query and delete entities in a database. Before using the ORM in your application we recommend to read the [QueryDSL Guide](/docs/orm/query-dsl) to make yourself familiar with all the options it offers. Another recommendation would be to take a look at [Migration API](/docs/orm/migrations) which provides a save and easy way of creating, upgrading and downgrading the database structure.

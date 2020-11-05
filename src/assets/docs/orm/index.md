@@ -1,2 +1,2 @@
 ## ToC
-- [Getting Started](/docs/orm/start)
+- [Getting Started](/docs/orm/getting-started)
