@@ -38,6 +38,7 @@ export default {
         window.onresize = ()=>{
             this.mobile = window.innerWidth < 720
         }
+        window.onresize()
     },
     components: {
         NavigationEntry
