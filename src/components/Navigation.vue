@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <div id="nav" :class="{docs: $route.meta.docs}">
             <router-link id="logo" to="/">
                 <img src="../assets/img/icon.svg">
@@ -12,20 +12,25 @@
                 <a href="https://github.com/JavaWebStack">GITHUB</a>
             </div>
         </div>
+
         <div id="docs-sidenav" v-if="$route.meta.docs">
-            <router-link class="sidenav-entry" to="/docs">
-                Hello there
-            </router-link>
-            <router-link class="sidenav-entry selected" to="/docs">
-                Hello there 2
-            </router-link>
+            <NavigationEntry :structure="structure" path="/docs" :indent="15" />
         </div>
 
     </div>
 </template>
 <script>
+import NavigationEntry from "./NavigationEntry";
+import structure from "../assets/docs/structure.js";
 export default {
-    
+    data: function(){
+        return {
+            structure
+        }
+    },
+    components: {
+        NavigationEntry
+    }
 }  
 </script>
 
@@ -100,24 +105,7 @@ export default {
     width: 300px;
     height: 100%;
     top: 71.1px;
-
-    .sidenav-entry,
-    .sidenav-entry:visited {
-        text-decoration: none;
-        color: #434343;
-        display: block;
-        padding: 7px 10px;
-        font-weight: 600;
-        transition: 0.3s;
-        font-size: 18px;
-        &.selected {
-            color: #60A8FD;
-            background: #60A8FD22;
-        }
-        &:hover {
-            color: #60A8FD;
-            background: #60A8FD11;
-        }
-    }
+    overflow: auto;
+    
 }
 </style>
