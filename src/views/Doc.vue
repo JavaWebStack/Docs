@@ -1,6 +1,6 @@
 <template>
     <div id="doc">
-        <div style="width: 100%; padding-left: 15%; padding-right: 15%; padding-top: 50px; padding-bottom: 50px;">
+        <div id="doc-body">
             <h1 id="doc-title">{{$route.meta.title}}</h1>
             <vue-markdown ref="content" id="markdown-contents" @rendered="onRender" :source="$route.meta.content" />
         </div>
@@ -36,7 +36,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#doc-title {
-    
+
+#doc-body {
+    width: 100%; 
+    padding-left: 15%; 
+    padding-right: 15%; 
+    padding-top: 50px; 
+    padding-bottom: 50px;
+}
+@media screen and (max-width: 720px){
+    #doc-body {
+        padding-left: 0px; 
+        padding-right: 0px; 
+    padding-top: 0px; 
+    }
 }
 </style>

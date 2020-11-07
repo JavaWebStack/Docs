@@ -27,7 +27,13 @@ export default {
                             name: "annotations",
                             title: "Annotations",
                             content: require("./orm/getting-started.md").default,
-                            children: []
+                            children: [
+                                {
+                                    name: "get",
+                                    title: "@Get",
+                                    content: require("./orm/getting-started.md").default
+                                },
+                            ]
                         }
                     ]
                 },

@@ -68,3 +68,12 @@ html {
         }
     }
 }
+
+
+@media screen and (max-width: 720px){
+    #page {
+        &.docs {
+            margin-left: 0px;
+        }
+    }    
+}

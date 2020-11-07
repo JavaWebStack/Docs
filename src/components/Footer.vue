@@ -96,4 +96,13 @@
 
     }
 }
+
+
+@media screen and (max-width: 720px){
+    #footer {
+        &.docs {
+            margin-left: 0px;
+        }
+    }
+}
 </style>

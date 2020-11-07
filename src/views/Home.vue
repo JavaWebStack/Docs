@@ -55,16 +55,19 @@
 /*
 https://github.com/miaolz123/vue-markdown
 */
-import hljs from "highlight.js";
+import Prismjs from "prismjs";
 
 export default {
   name: 'Home',
   data:()=>({
-    exampleCode: hljs.highlightAuto(`public class Text {
+    exampleCode: Prismjs.highlight(`public class MyApp extends WebApplication {
   public static void main(String[] args){
-    System.out.println("hi");
-  }
-}`).value
+      new MyApp().run(); }
+
+  public void setupServer(HTTPServer httpServer) {
+      httpServer.get("/", exchange->"Hello world!");
+      httpServer.get("/list/{hello:i+}", e ->
+        Repo.get(Item.class).get(e.parameters.get("item")));`, Prismjs.languages.java, 'java')
   }),
   components: {
   }
@@ -118,6 +121,7 @@ export default {
   }
   #code-block {
     background: #252539;
+    overflow: auto;
     left: 50%;
     color: #FFF;
     border-radius: 10px;
@@ -185,5 +189,57 @@ export default {
   100%{
     transform: none;
   }
+}
+
+@media screen and (max-width: 720px){
+  #top {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    margin-top: 130px;
+    h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #323232;
+      text-align: center;
+    }
+    .links {
+      text-align: center;
+      margin-top: 50px;
+    }
+    svg {
+      margin-top: 30px;
+      margin-bottom: 80px;
+      position: static;
+      float: right;
+      width: 150px;
+      height: 150px;
+    }
+  }
+  #example {
+  width: 100%;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  #description {
+    width: 100%;
+    h1 {
+      text-align: center;
+    }
+  }
+
+  #code-block {
+    float: none;
+    width: 100%;
+    position: static;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    code {
+      pre {
+        font-size: 21px;
+      }
+    }
+  }
+}
 }
 </style>
