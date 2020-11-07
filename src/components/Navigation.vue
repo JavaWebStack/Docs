@@ -14,7 +14,7 @@
         </div>
 
         <div id="docs-sidenav" v-if="$route.meta.docs">
-            <NavigationEntry :structure="structure" path="/docs" :indent="15" />
+            <NavigationEntry :structure="structure" path="/docs" :indent="21" />
         </div>
 
     </div>
