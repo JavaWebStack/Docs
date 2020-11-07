@@ -77,13 +77,6 @@ export default {
                     name: "query-dsl",
                     title: "Query DSL",
                     content: require("./orm/query-dsl.md").default,
-                    children: [
-                        {
-                            name: "getting-started",
-                            title: "Getting Started",
-                            content: require("./orm/getting-started.md").default
-                        }
-                    ]
                 },
                 {
                     name: "soft-deletes",
