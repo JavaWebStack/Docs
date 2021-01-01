@@ -41,21 +41,41 @@
 
       </div>
       <div id="description">
-        <h1>Example Text</h1>
+        <h1>JavaWebStack... What?!</h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          Build wonderful Web-APIs in the worlds most beautiful programming language java. JavaWebStack is a fundament to build your app onto in a clean and understandable form.
+          <br><br><br><br><br>
         </p>
       </div>
-      
+      <div id="repositories">
+        <h1>Repositories</h1>
+        <div id="repository-list">
+          <div v-for="githubRepo in githubRepos" :key="githubRepo.id" class="repository">
+            <div class="top">
+              <img src="../assets/icons/repository.svg">
+              <h1>{{githubRepo.name}}</h1>
+              <a class="stargazers" :href="githubRepo.html_url+'/stargazers'">
+                <span>{{githubRepo.stargazers_count}}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16"><path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/></svg>
+              </a>
+            </div>
+            <p>
+              {{githubRepo.description}}
+            </p>
+            <div class="buttons">
+              <a :href="githubRepo.html_url" target="_blank">GitHub</a>
+              <router-link :to="'/docs/'+githubRepo.name">Docs</router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-/*
-https://github.com/miaolz123/vue-markdown
-*/
 import Prismjs from "prismjs";
+import { Prajax } from "cajaxjs";
 
 export default {
   name: 'Home',
@@ -67,8 +87,13 @@ export default {
   public void setupServer(HTTPServer httpServer) {
       httpServer.get("/", exchange->"Hello world!");
       httpServer.get("/list/{hello:i+}", e ->
-        Repo.get(Item.class).get(e.parameters.get("item")));`, Prismjs.languages.java, 'java')
+        Repo.get(Item.class).get(e.parameters.get("item")));`, Prismjs.languages.java, 'java'),
+    githubRepos: []
   }),
+  mounted(){
+    Prajax.get("https://api.github.com/orgs/javawebstack/repos")
+      .then(res => this.githubRepos = res.json())
+  },
   components: {
   }
 }
@@ -130,10 +155,96 @@ export default {
     float: right;
     position: absolute;
     margin-left: 120px;
-    margin-top: 100px;
+    margin-top: 20px;
     code {
       pre {
         font-size: 21px;
+      }
+    }
+  }
+}
+
+#repositories {
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #545454;
+    margin-bottom: 50px;
+  }
+
+  #repository-list {
+    margin: auto;
+    width: fit-content;
+  }
+
+  .repository {
+    display: inline-block;
+    text-decoration: none;
+    color: #545454;
+    border-radius: 10px;
+    border: 2px #CCCCCC solid;
+    padding: 8px;
+    width: 376px;
+    max-width: 100%;
+    vertical-align: top;
+    margin: 5px;
+
+    .top {
+      margin-bottom: 5px;
+      img, svg {
+        width: 16px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      h1 {
+        display: inline-block;
+        text-align: right;
+        font-size: 18px;
+        margin-left: 10px;
+        margin-bottom: 0px;
+        color: #747474;
+      }
+
+      .stargazers {
+        display: inline-block;
+        float: right;
+        color: #767676;
+        text-decoration: none;
+        svg {
+          margin-left: 4px;
+          vertical-align: middle;
+          margin-bottom: 1px;
+          color: #767676;
+        }
+
+        span {
+          vertical-align: middle;
+          font-weight: 600;
+        }
+
+        &:hover {
+          color: #434343;
+          svg {
+            color: #434343;
+          }
+        }
+      }
+    }
+    p {
+      min-height: 80px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+    .buttons {
+      a, a:link, a:visited {
+        color: #434343;
+        margin-right: 7px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
   }
@@ -224,6 +335,14 @@ export default {
     width: 100%;
     h1 {
       text-align: center;
+    }
+  }
+
+
+  #repositories {
+    .repository {
+      width: 100%;
+      display: block;
     }
   }
 
