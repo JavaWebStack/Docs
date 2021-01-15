@@ -1,0 +1,23 @@
+site_name: JavaWebStack Docs
+theme:
+  name: material
+  logo: 'assets/img/icon-dark.svg'
+  favicon: 'assets/img/icon-dark.svg'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+nav:
+  - Home: index.md
+  - ORM:
+    - 'orm/index.md'
+    - 'orm/getting-started.md'
+    - 'orm/config.md'
+    - 'orm/query-dsl.md'
+    - 'orm/dates.md'
+    - 'orm/table-and-column-options.md'
+    - 'orm/observer.md'
+    - 'orm/soft-deletes.md'
+    - 'orm/type-mapping.md'
+    - 'orm/migrations.md'
