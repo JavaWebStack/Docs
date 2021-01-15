@@ -15,13 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build -t nexus.lumaserv.cloud/repository/javawebstack-docker/javawebstack/docs:latest .
+      run: docker build -t docker.javawebstack.org/javawebstack/docs:latest .
     -
       name: Login to Nexus
       uses: docker/login-action@v1 
       with:
-        registry: 'nexus.lumaserv.cloud/repository/javawebstack-docker'
+        registry: docker.javawebstack.org
         username: ${{ secrets.NEXUS_USERNAME }}
         password: ${{ secrets.NEXUS_PASSWORD }}
     - name: Push the Docker image
-      run: docker push nexus.lumaserv.cloud/repository/javawebstack-docker/javawebstack/docs:latest
+      run: docker push docker.javawebstack.org/javawebstack/docs:latest
