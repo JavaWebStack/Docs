@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build -t nexus.lumaserv.cloud/repository/javawebstack-docker/javawebstack/docs:latest .
+    -
+      name: Login to Nexus
+      uses: docker/login-action@v1 
+      with:
+        registry: 'nexus.lumaserv.cloud/repository/javawebstack-docker'
+        username: ${{ secrets.NEXUS_USERNAME }}
+        password: ${{ secrets.NEXUS_PASSWORD }}
+    - name: Push the Docker image
+      run: docker push nexus.lumaserv.cloud/repository/javawebstack-docker/javawebstack/docs:latest
