@@ -15,7 +15,7 @@ for(GraphElement e : data) {
 }
 ```
 
-## Maven (Standalone Usage)
+## Maven
 ```xml
 <repository>
     <id>javawebstack</id>
