@@ -30,7 +30,9 @@ nav:
     - HTTP-Server:
       - 'framework/httpserver/index.md'
       - 'framework/httpserver/route-parameters.md'
+      - 'framework/httpserver/response-transformer.md'
       - 'framework/httpserver/websocket.md'
+      - 'framework/httpserver/testing.md'
     - Injector:
       - 'framework/injector/index.md'
       - 'framework/injector/reference.md'
