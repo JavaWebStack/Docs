@@ -29,6 +29,8 @@ nav:
       - 'framework/orm/migrations.md'
     - HTTP-Server:
       - 'framework/httpserver/index.md'
+      - 'framework/httpserver/controller.md'
+      - 'framework/httpserver/middleware.md'
       - 'framework/httpserver/route-parameters.md'
       - 'framework/httpserver/response-transformer.md'
       - 'framework/httpserver/websocket.md'
