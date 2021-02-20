@@ -1,4 +1,9 @@
 site_name: JavaWebStack Docs
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - admonition
 theme:
   name: material
   logo: 'assets/img/icon-dark.svg'
@@ -8,9 +13,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
-markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences
+copyright: '<a href="/legal-notice">Legal Notice</a><br><br>'
 nav:
   - Home: index.md
   - Framework:

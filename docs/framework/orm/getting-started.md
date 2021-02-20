@@ -67,8 +67,10 @@ Let's say one of your customers decided to delete his or her account and you wan
 User customer = ...;
 customer.delete();
 ```
-#### Special Case: Soft Deletes
-The ORM supports a technique called soft deletes. This will instead of actually the deleting the entity from the database, set a special timestamp to mark it as "deleted". It allows to restore the entity at any later point in time. You can read more about soft deletes [here](/docs/orm/soft-deletes).
+
+###
+!!! note "Soft Deletes"
+    The ORM supports a technique called soft deletes. This will instead of actually the deleting the entity from the database, set a special timestamp to mark it as "deleted". It allows to restore the entity at any later point in time. You can read more about soft deletes [here](/docs/orm/soft-deletes).
 
 ## Conclusion
 You are now able to save, query and delete entities in a database. Before using the ORM in your application we recommend to read the [QueryDSL Guide](/docs/orm/query-dsl) to make yourself familiar with all the options it offers. Another recommendation would be to take a look at [Migration API](/docs/orm/migrations) which provides a save and easy way of creating, upgrading and downgrading the database structure.
