@@ -10,6 +10,13 @@ The ORM ships with a DefaultMapper, which specifies, for instance, what Field in
 
 We consider our v1.0 goals achieved when the following features are implemented:
 
+Type Definition:
+Elementary - If this feature is not included there will be SQL features which will become impossible to perform with the ORM.
+
+Utility - If this feature is not included the developer will not be limited in options but needs to write more code to achive the same code
+
+Decision - A utility feature which forces some sort of convention on the user and should thusly be overwritable.
+
 ### Relation Mapping
 
 |Achieved|Tested|Implemented|Feature|Type|
@@ -58,6 +65,14 @@ We consider our v1.0 goals achieved when the following features are implemented:
 | No | No | Yes | Timestamps (Created At, Updated At) | Utility |
 | No | No | Yes | Soft Deletes | Utility |
 | No | No | Yes | Observer | Utility |
+
+### Not included but considered features
+|Feature|Type|Reason|
+| - | - | - |
+| Raw Query Fragments | Essential | They pose a big challenge to our typing though they might get a lose AbstractObject typing in later versions
+| Joins | Essential | They were subject of internal discussions and we aim to support them in later versions
+| Configurable Encoding/Collation | Essential | We decided to only support utf8mb4_unicode_ci collation for simplicities sake. This feature might be added in much later
+
 
 
 ## Maven (Standalone Usage)
