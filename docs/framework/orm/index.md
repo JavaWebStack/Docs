@@ -6,9 +6,9 @@ The ORM (Object-Relational-Mapping) allows you to access SQL databases without a
 ## Goals and State of the Project
 The ORM attempts to make sensible decisions for developers while also granting the ability to overwrite these decisions. To illustrate this with an example:
 
-The ORM ships with a DefaultMapper, which specifies, for instance, what Field in your model maps to which SQL datatype. You have the option to use your own definition and partially use ours when it fits you already.
+The ORM ships with a DefaultMapper, which specifies, for instance, what Field in your model maps to which SQL datatype. You have the option to use your definition and partially use ours when it fits you already.
 
-We consider our v1.0 goals achieved when the following features have been achieved:
+We consider our v1.0 goals achieved when the following features are implemented:
 
 ### Relation Mapping
 
