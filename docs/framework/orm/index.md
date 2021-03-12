@@ -85,6 +85,7 @@ Decision - A utility feature, which forces some convention on the developer and 
 ### Current Design Flaws and architectural impurities
 - Relationships are not their own types and their methods are put on the model
 - We don't treat exceptions soundly
+- An id field is currently necessary (we could dynamically go via the attributes primary key and unique and otherwise match all data with LIMIT 1)
 - Please fill in here more Jan 
 
 ## Maven (Standalone Usage)
