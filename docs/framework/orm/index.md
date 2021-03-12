@@ -35,7 +35,7 @@ Decision - A utility feature, which forces some convention on the developer and 
 | No | No | No | has | Utility |
 | No | No | Yes | ORDER BY Clause | Elementary |
 | No | No | No | GROUP BY Clause | Elementary |
-| No | No | No | OFFSET Clause | Elementary |
+| No | No | Yes | OFFSET Clause | Elementary |
 | No | No | Yes | LIMIT Clause | Elementary |
 | No | No | Yes | HAVING Clause | Elementary |
 | No | No | Yes | Belongs To (1:n) Relation | Utility |
