@@ -57,7 +57,9 @@ Decision - A utility feature, which forces some convention on the developer and 
 | No | No | Yes | Column name is configurable per column | Essential |
 | No | No | No | An index can be set per column | Essential |
 | No | No | Yes | A primary key can be set per column | Essential |
+| No | No | No | A primary key can be set across multiple columns | Essential | 
 | No | No | Yes | A unique attribute can be set per column | Essential |
+| No | No | No | A foreign key can be set per column | Essential |
 | No | No | No | Not nullable can be configured per column | Essential |
 
 ### Processing
@@ -67,7 +69,7 @@ Decision - A utility feature, which forces some convention on the developer and 
 | No | No | Yes | Soft Deletes | Utility |
 | No | No | Yes | Observer | Utility |
 
-### Security Features
+### Security
 |Achieved|Tested|Implemented|Feature|
 | - | - | - | - |
 | No | No | ? | SQL Injection Protection |
