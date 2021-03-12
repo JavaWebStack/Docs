@@ -67,6 +67,11 @@ Decision - A utility feature, which forces some convention on the developer and 
 | No | No | Yes | Soft Deletes | Utility |
 | No | No | Yes | Observer | Utility |
 
+### Security Features
+|Achieved|Tested|Implemented|Feature|
+| - | - | - | - |
+| No | No | ? | SQL Injection Protection |
+
 ### Not included but considered features
 |Feature|Type|Reason|
 | - | - | - |
