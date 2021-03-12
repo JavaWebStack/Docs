@@ -15,7 +15,7 @@ Elementary - If this feature is not included there will be SQL features which wi
 
 Utility - If this feature is not included the developer will not be limited in options but needs to write more code to achive the same code
 
-Decision - A utility feature which forces some sort of convention on the user and should thusly be overwritable.
+Decision - A utility feature, which forces some convention on the developer and should, thusly, be overwritable.
 
 ### Relation Mapping
 
@@ -70,9 +70,10 @@ Decision - A utility feature which forces some sort of convention on the user an
 ### Not included but considered features
 |Feature|Type|Reason|
 | - | - | - |
-| Raw Query Fragments | Essential | They pose a big challenge to our typing though they might get a lose AbstractObject typing in later versions
+| Raw Query Fragments | Essential | They pose a big challenge to our typing though they might get a lose AbstractObject typing in later versions |
 | Joins | Essential | They were the subject of internal discussions, and we aim to support them in later versions
-| Configurable Encoding/Collation | Essential | We decided only to support utf8mb4_unicode_ci collation for simplicity's sake. We might add this much later
+| Configurable Encoding/Collation | Essential | We decided only to support utf8mb4_unicode_ci collation for simplicity's sake. We might add this much later |
+| Unsigned Propery | Essential | We could offer this easily by just plugin in the setting in the SQL Syntax and databases with unsigned columns will work but the Datatype ranges in Java don't support it and can overflow. We want to introduce our own unsigned types later.
 
 
 
