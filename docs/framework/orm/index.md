@@ -60,6 +60,10 @@ Decision - A utility feature, which forces some convention on the developer and 
 | No | No | No | A primary key can be set across multiple columns | Essential | 
 | No | No | Yes | A unique attribute can be set per column | Essential |
 | No | No | No | A foreign key can be set per column | Essential |
+| No | No | No | ON DELETE | Essential | 
+| No | No | No | ON UPDATE | Essential |
+| No | No | No | On Soft Delete | Utility |
+| No | No | Yes | Auto-increment can be configured per column | Essential |
 | No | No | No | Not nullable can be configured per column | Essential |
 
 ### Processing
