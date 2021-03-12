@@ -75,7 +75,10 @@ Decision - A utility feature, which forces some convention on the developer and 
 | Configurable Encoding/Collation | Essential | We decided only to support utf8mb4_unicode_ci collation for simplicity's sake. We might add this much later |
 | Unsigned Propery | Essential | We could offer this easily by just plugin in the setting in the SQL Syntax and databases with unsigned columns will work but the Datatype ranges in Java don't support it and can overflow. We want to introduce our own unsigned types later.
 
-
+### Current Design Flaws and architectural impurities
+- Relationships are not their own types and their methods are put on the model
+- We don't treat exceptions soundly
+- Please fill in here more Jan 
 
 ## Maven (Standalone Usage)
 ```xml
