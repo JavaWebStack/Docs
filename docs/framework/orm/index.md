@@ -21,7 +21,7 @@ Decision - A utility feature, which forces some convention on the developer and 
 
 |Achieved|Tested|Implemented|Feature|Type|
 | - | - | - | - | - |
-| No |No | Yes |  |  |
+| | | | Spec is WIP | Info |
 
 ### Query Building
 |Achieved|Tested|Implemented|Feature|Type|
@@ -76,7 +76,7 @@ Decision - A utility feature, which forces some convention on the developer and 
 ### Security
 |Achieved|Tested|Implemented|Feature|
 | - | - | - | - |
-| No | No | ? | SQL Injection Protection |
+| No | No | No | SQL Injection Protection |
 
 ### Not included but considered features
 |Feature|Type|Reason|
@@ -84,13 +84,13 @@ Decision - A utility feature, which forces some convention on the developer and 
 | Raw Query Fragments | Essential | They pose a big challenge to our typing though they might get a lose AbstractObject typing in later versions |
 | Joins | Essential | They were the subject of internal discussions, and we aim to support them in later versions
 | Configurable Encoding/Collation | Essential | We decided only to support utf8mb4_unicode_ci collation for simplicity's sake. We might add this much later |
-| Unsigned Propery | Essential | We could offer this easily by just plugin in the setting in the SQL Syntax and databases with unsigned columns will work but the Datatype ranges in Java don't support it and can overflow. We want to introduce our own unsigned types later.
+| Unsigned Propery | Essential | We could offer this easily by simply plugging in the setting in the SQL Syntax and existing databases with unsigned columns already work. The Datatype ranges in Java, however, do not support it and can overflow. We want to introduce our own unsigned types later.
 
-### Current Design Flaws and architectural impurities
-- Relationships are not their own types and their methods are put on the model
+### Current Design Flaws and architectural impurities 
+- Relationships are not their own types, and their methods placed on the model
 - We don't treat exceptions soundly
 - An id field is currently necessary (we could dynamically go via the attributes primary key and unique and otherwise match all data with LIMIT 1)
-- Please fill in here more Jan 
+ 
 
 ## Maven (Standalone Usage)
 ```xml
