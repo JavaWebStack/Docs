@@ -72,7 +72,7 @@ Repo.get(User.class).limit(3) // Only the first 3 users
 ```
 
 #### withDeleted
-If [soft-deletes](/docs/orm/soft-deletes) are enabled for the model, this will include soft-deleted entities into the query.
+If [soft-deletes](/framework/orm/soft-deletes/) are enabled for the model, this will include soft-deleted entities into the query.
 ```java
 Repo.get(Article.class).withDeleted() // All articles ever written including the deleted ones.
 ```
