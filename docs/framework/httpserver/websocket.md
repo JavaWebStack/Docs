@@ -26,5 +26,5 @@ public class NotificationWebsocket extends WebSocketHandler {
 ```
 To register your websocket you can simply use the `webSocket` method of `HTTPServer`. It takes a path aswell as an instance of your handler. As it's initially handled the same way as any other `GET` route you can use path variables and apply middleware.
 ```java
-server.webSocket("/notifications/{i+:user}/socket", new NotificationWebsocket)
+server.webSocket("/notifications/{i+:user}/socket", new NotificationWebsocket());
 ```
