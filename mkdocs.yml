@@ -19,6 +19,7 @@ nav:
   - Framework:
     - 'framework/index.md'
     - 'framework/model-binding.md'
+    - 'framework/modules.md'
     - ORM:
       - 'framework/orm/index.md'
       - 'framework/orm/getting-started.md'
