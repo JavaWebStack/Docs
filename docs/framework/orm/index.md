@@ -27,7 +27,7 @@ Decision - A utility feature, which forces some convention on the developer and 
 |Achieved|Tested|Implemented|Feature|Type|
 | - | - | - | - | - |
 | No | No | No | SELECT Clause (default: SELECT *) | Elementary |
-| No | No | Yes | FROM Clause derived from Model | Elementary |
+| No | [Yes](https://github.com/JavaWebStack/ORM/blob/master/src/test/java/org/javawebstack/orm/test/querybuilding/FromClauseTest.java) | Yes | FROM Clause derived from Model | Elementary |
 | No | No | Yes | WHERE Clause | Elementary |
 | No | No | Yes | Nested WHERE Clause | Elementary |
 | No | No | Yes | WHERE EXISTS Clause | Elementary |
