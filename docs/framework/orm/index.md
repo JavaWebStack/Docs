@@ -49,9 +49,9 @@ Decision - A utility feature, which forces some convention on the developer and 
 |Achieved|Tested|Implemented|Feature|Type|
 | - | - | - | - | - |
 | No | No | Yes | Default Size per config | Utility |
-| No | No | Yes | Size per configurable per column | Essential |
+| No | No | Yes | Size configurable per column | Essential |
 | No | No | Yes | Table name is the plural of class name | Decision |
-| No | No | Yes | Table name per configurable per model | Essentials |
+| No | No | Yes | Table name configurable per model | Essentials |
 | No | No | Yes | Column name is snake case of attribute name | Decision |
 | No | No | Yes | Column name convention is overwritable to other cases | Utility |
 | No | No | Yes | Column name is configurable per column | Essential |
