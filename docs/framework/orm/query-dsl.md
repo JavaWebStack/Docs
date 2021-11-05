@@ -65,10 +65,28 @@ This method orders the results by the given field and returns them in descending
 Repo.get(User.class).orderBy("age", true) // All users starting with the oldest descending to the youngest
 ```
 
+#### groupBy
+This method groups the results by the given column name.
+```java
+Repo.get(User.class).groupBy("age") // Groups all users with the same age together.
+```
+
 #### limit
 Limit the amount of entities returned.
 ```java
 Repo.get(User.class).limit(3) // Only the first 3 users
+```
+
+#### offset
+Shifts the entries by n, useful in combination with limit.
+```java
+Repo.get(User.class).offset(1337) // Starts at the 1337th User
+```
+
+#### limit & offset together
+The functionality of limit and offset together.
+```java
+Repo.get(User.class).limit(1337, 100)
 ```
 
 #### withDeleted
